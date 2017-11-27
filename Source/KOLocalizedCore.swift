@@ -7,9 +7,9 @@
 //
 import Foundation
 /// Helper for change language your app, without rebooting app
-class KOLocalizedCore{
+open class KOLocalizedCore{
     //Shared instance
-    static let main = KOLocalizedCore()
+    open static let main = KOLocalizedCore()
     //––––––––––––––––––––––––––––––––––––––––
     //MARK: - Keys -
     //––––––––––––––––––––––––––––––––––––––––
@@ -42,17 +42,17 @@ class KOLocalizedCore{
     //MARK: - Settings property -
     //––––––––––––––––––––––––––––––––––––––––
     //Is update outside. default false
-    public var isUpdateOutside              : Bool   = true
+    open var isUpdateOutside              : Bool   = true
     //Is debug. default false
-    public var isEnabelDebug                : Bool   = true{
+    open var isEnabelDebug                : Bool   = true{
         didSet{
             fileManager.isEnabelDebug = isEnabelDebug
         }
     }
     /// Default language key
-    public var fileName                     : String = "Localizable"
+    open var fileName                     : String = "Localizable"
     //URL to outside api
-    public var url                          : String!{
+    open var url                          : String!{
         didSet{
             if url != nil{
                 if isUpdateOutside{
@@ -62,7 +62,7 @@ class KOLocalizedCore{
         }
     }
     /// Default language key
-    public var defaultLanguageKey           : String?
+    open var defaultLanguageKey           : String?
     //––––––––––––––––––––––––––––––––––––––––
     //MARK: - Manager property -
     //––––––––––––––––––––––––––––––––––––––––
@@ -201,7 +201,7 @@ class KOLocalizedCore{
     /// - Returns: Bundle or nil
     internal func getOutSideBundle(_ key:String)->Bundle?{
         guard let newBundle = fileManager.getOutsideBundleWithKey(key, countFiles:nil) else {
-             return nil
+            return nil
         }
         return newBundle
     }
@@ -275,3 +275,4 @@ class KOLocalizedCore{
         }
     }
 }
+
