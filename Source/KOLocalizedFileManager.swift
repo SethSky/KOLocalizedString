@@ -13,7 +13,7 @@ internal class KOLocalizedFileManager {
     //––––––––––––––––––––––––––––––––––––––––
     //MARK: - Property
     //––––––––––––––––––––––––––––––––––––––––
-    /// FileManager 
+    /// FileManager
     private let manager             : FileManager = FileManager.default
     //Language directory name
     private var directoryName       : String = "Languages"
@@ -32,7 +32,7 @@ internal class KOLocalizedFileManager {
     //––––––––––––––––––––––––––––––––––––––––
     //Init
     init(){
-       setup() 
+        setup()
     }
     /// Init with isEnabelDebug property
     ///
@@ -74,8 +74,8 @@ internal class KOLocalizedFileManager {
                     })
                 }
             }else{
-                 debug("KOLocalizedFileManager: Aplication Support does not exist")
-                 createDirectory(createPath("", searchPathDirectory, searchPathDomainMask)!, success: { (locDir) in
+                debug("KOLocalizedFileManager: Aplication Support does not exist")
+                createDirectory(createPath("", searchPathDirectory, searchPathDomainMask)!, success: { (locDir) in
                     createDirectory(path, success: { (locDir) in
                         success(path)
                     }, failure: { (error) in
@@ -135,9 +135,9 @@ internal class KOLocalizedFileManager {
         debug("KOLocalizedFileManager: saveFile:" + object.fileName + " to: " + key + ".lproj")
         let lprojPath = pathDirectory + "/" + key + ".lproj"
         if self.isExistsDirectori(lprojPath){
-                if isNeedUpdateDataWithObject(object, key: key){
-                    _ = moveFile(url, toUrl: URL(fileURLWithPath: lprojPath + "/" + object.fileName))
-                }
+            if isNeedUpdateDataWithObject(object, key: key){
+                _ = moveFile(url, toUrl: URL(fileURLWithPath: lprojPath + "/" + object.fileName))
+            }
         }else{
             self.createDirectory(lprojPath, success: { (dir) in
                 self.saveFile(object, url: url, key)
@@ -170,8 +170,8 @@ internal class KOLocalizedFileManager {
                 return true
             }
         }catch let error{
-           debug(error)
-           return moveFile(fromUrl, toUrl: toUrl)
+            debug(error)
+            return moveFile(fromUrl, toUrl: toUrl)
         }
     }
     /// Remove directory with key
@@ -251,7 +251,7 @@ internal class KOLocalizedFileManager {
     }
     /// Get array with keys to UserDefaults
     ///
-    /// - Returns:  Array<String> 
+    /// - Returns:  Array<String>
     func getKeysArray() -> Array<String> {
         return keyArray
     }
@@ -263,7 +263,7 @@ internal class KOLocalizedFileManager {
     /// - Parameter key: key
     /// - Returns: Bundle or nil
     internal func getOutsideBundleWithKey(_ key:String, countFiles:Int?)->Bundle?{
-        debug("KOLocalizedFileManager: get outside Bundle with key")
+        debug("KOLocalizedFileManager: get outside Bundle with key: " + key)
         guard pathDirectory != nil else {
             return nil
         }
