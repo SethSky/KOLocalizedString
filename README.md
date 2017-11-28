@@ -53,4 +53,4 @@ $ pod install
 ```
 ## License
 
-KOLocalizedString is released under the MIT license. [See LICENSE](https://github.com/SethSky/KOLocalizedString/blob/master/LICENSE) for details.
+KOLocalizedString is released under the MIT license. [See LICENSE](LICENSE) for details.
