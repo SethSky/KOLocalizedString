@@ -26,7 +26,10 @@ After added URL to Core, manager network (KOLocalizedNetwork) create .GET reques
 
 #### Example Request
 http://khimich.com.ua/api/?key=en&ver=1.0&bundle=com.domine.Example
-Used keys: key, ver, bundle.
+Request parameters:
+key = en
+ver = 1.0
+bundle = com.domine.Example
 
 Response must contain array objects for parsing JSON.
 Object must contain key "filename" - name file, "url" - url to file, "latest_update" - the value of which will be checked, updated file or not.
