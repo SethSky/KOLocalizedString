@@ -21,7 +21,7 @@ class KOLocalizedNetwork {
     //––––––––––––––––––––––––––––––––––––––––
     /// Init with URL and defalult session
     init(_ url:String) {
-        let sessionConfig = URLSessionConfiguration.default 
+        let sessionConfig = URLSessionConfiguration.default
         self.session = URLSession(configuration: sessionConfig)
         self.url = url
     }
@@ -37,8 +37,8 @@ class KOLocalizedNetwork {
     ///   - session: URLSession
     ///   - url: URL
     init(_ session:URLSession, _ url:String) {
-         self.session = session
-         self.url = url
+        self.session = session
+        self.url = url
     }
     //––––––––––––––––––––––––––––––––––––––––
     //MARK: - Function
@@ -50,9 +50,9 @@ class KOLocalizedNetwork {
     private func createURLWithKey(_ key:String) -> URL? {
         if let bundleID = Bundle.main.bundleIdentifier{
             if let version = Bundle.main.infoDictionary!["CFBundleShortVersionString"] as? String {
-               return URL(string: url + "?key=" + key + "&bundle=" + bundleID + "&ver=" + version)
+                return URL(string: url + "?key=" + key + "&bundle=" + bundleID + "&ver=" + version)
             }else{
-               return nil
+                return nil
             }
         }else{
             return nil
@@ -121,7 +121,7 @@ class KOLocalizedNetwork {
                 success(result as! [String : Any])
             }
             if result is NSError{
-                 failure(error! as NSError)
+                failure(result as! NSError)
             }
         }
         task(taskS)
@@ -150,10 +150,10 @@ class KOLocalizedNetwork {
         }
         task.resume()
     }
-   /// Remove task
-   ///
-   /// - Parameter sessionTask: URLSessionTask
-   private func removeTask(_ sessionTask:URLSessionTask){
+    /// Remove task
+    ///
+    /// - Parameter sessionTask: URLSessionTask
+    private func removeTask(_ sessionTask:URLSessionTask){
         var indexTask:Int!
         for ( index, task) in taskArray.enumerated(){
             if sessionTask == task{
@@ -189,6 +189,10 @@ class KOLocalizedNetwork {
                 }
             }else{
                 debug("KOLocalizedNetwork: " + "Failure: %@", error?.localizedDescription ?? ":")
+                if error == nil{
+                    return NSError(domain: "KOLocalizedNetworkNoFound", code: 404,
+                                   userInfo: ["NSLocalizedDescription":"Localization not found"])
+                }
                 return error! as NSError
             }
         }

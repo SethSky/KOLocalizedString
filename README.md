@@ -42,7 +42,7 @@ platform :ios, '10.0'
 use_frameworks!
 
 target '<Your Target Name>' do
-    pod 'KOLocalizedString', '~> 0.0.2'
+    pod 'KOLocalizedString', '~> 0.0.3'
 end
 ```
 

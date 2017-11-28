@@ -183,7 +183,7 @@ open class KOLocalizedCore{
     /// - Parameter key: String
     /// - Returns: Bundle
     internal func getBundleWithKey(_ key:String)->Bundle?{
-        if let outSideBundle = getOutSideBundle(key){
+        if let outSideBundle = getOutSideBundle(key), isUpdateOutside && url != nil{
             return outSideBundle
         }
         if let path = Bundle.main.path(forResource: key, ofType: "lproj"){
@@ -275,4 +275,3 @@ open class KOLocalizedCore{
         }
     }
 }
-
