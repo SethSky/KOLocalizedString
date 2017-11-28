@@ -35,9 +35,16 @@ Object must contain key "filename" - name file, "url" - url to file, "latest_upd
 ```JSON
 {
   "array":[
-  {"filename":"Localizable.plist",
-    "url":"http://khimich.com.ua/localizable/com.khymych.KOLocalized/1.0/en/Localizable.plist",
-    "latest_update":"2017-Nov-24'EET'16:11:45"}
+  {
+    "filename":"Localizable.plist",
+    "url":"http://example.com/localizable/com.khymych.KOLocalized/1.0/en/Localizable.plist",
+    "latest_update":"2017-Nov-24'EET'16:11:45"
+  },
+  {
+    "filename":"Localizable.strings",
+    "url":"http://example.com/localizable/com.khymych.KOLocalized/1.0/en/Localizable.strings",
+    "latest_update":"2017-Nov-23'EET'16:11:45"
+  }
     ]
   }
 ```
