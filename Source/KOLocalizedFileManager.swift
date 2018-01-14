@@ -6,8 +6,7 @@
 //  Copyright © 2017 Oleksandr Khymych. All rights reserved.
 //
 
-import Foundation
-import UIKit
+import Foundation 
 
 internal class KOLocalizedFileManager {
     //––––––––––––––––––––––––––––––––––––––––
