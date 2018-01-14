@@ -18,7 +18,7 @@ KOLocalizedString is an Localization library written in Swift.
 
 ## Requirements
 
-- iOS 9.0+
+- iOS 9.3+ / macOS 10.10+ / tvOS 9.0+ / watchOS 2.0+
 - Xcode 8.3+
 - Swift 3.1+
 
@@ -42,7 +42,7 @@ platform :ios, '10.0'
 use_frameworks!
 
 target '<Your Target Name>' do
-    pod 'KOLocalizedString', '~> 0.0.3'
+    pod 'KOLocalizedString', '~> 0.0.4'
 end
 ```
 

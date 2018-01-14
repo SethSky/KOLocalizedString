@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
   s.name = 'KOLocalizedString'
-  s.version = '0.0.3'
+  s.version = '0.0.4'
   s.license = 'MIT'
   s.summary = 'Alternative NSLocalized​String in Swift'
   s.homepage = 'https://github.com/SethSky/KOLocalizedString'
@@ -8,6 +8,9 @@ Pod::Spec.new do |s|
   s.source = { :git => 'https://github.com/SethSky/KOLocalizedString.git', :tag => s.version }
 
   s.ios.deployment_target = '9.3'
+  s.osx.deployment_target = '10.10'
+  s.tvos.deployment_target = '9.0'
+  s.watchos.deployment_target = '2.0'
 
   s.source_files = 'Source/*.swift'
 end

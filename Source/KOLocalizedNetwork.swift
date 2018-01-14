@@ -6,7 +6,10 @@
 //  Copyright © 2017 Oleksandr Khymych. All rights reserved.
 //
 import Foundation
-import UIKit
+#if os(iOS)
+    import UIKit
+#elseif os(OSX)
+#endif
 
 class KOLocalizedNetwork {
     //––––––––––––––––––––––––––––––––––––––––
@@ -203,9 +206,12 @@ class KOLocalizedNetwork {
     ///
     /// - Parameter active: Bool
     private func isNetworkActivity(_ visible:Bool){
-        DispatchQueue.main.async {
-            UIApplication.shared.isNetworkActivityIndicatorVisible = visible
-        }
+        #if os(iOS)
+            DispatchQueue.main.async {
+                UIApplication.shared.isNetworkActivityIndicatorVisible = visible
+            }
+        #elseif os(OSX)
+        #endif
     }
     /// Debug print
     ///
