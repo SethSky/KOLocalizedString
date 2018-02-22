@@ -46,7 +46,7 @@ public func setDefaultLanguageKey(string: String)
 
 Set file name. Default  ```Localizable```
  ```swift
-func setFileName(string: String){
+func setFileName(string: String)
 ```
 
 Set URL for destination resource for get response about language files information
@@ -62,10 +62,9 @@ Set is enable debug. Default ```false``` (not show debug in console)
 ```swift
 public func isEnableDebug(debug:Bool)
 ```
-  ### More info
-  
-- **Get started -** [Get started](/Documentation/GetStarted.md)
-- **Custom configuration -**  
-- **Network  configuration -** [Downloading Data to a File](/Documentation/NetworkCustomConfiguration.md)
-- **Localized string -** [Localized string](/Documentation/LocalizedString.md)
-- **Update language from server -** [Update language from server](/Documentation/UpdateLanguageFromServer.md)
+  ### More info 
+  - [Get started](/Documentation/GetStarted.md)
+  - **Custom configuration -** [Network Custom configuration](/Documentation/NetworkCustomConfiguration.md)
+  - [Updating files from server](/Documentation/UpdatingFromServer.md)
+  - [Localized string](/Documentation/LocalizedString.md)
+  - [Update language from server](/Documentation/UpdateLanguageFromServer.md)

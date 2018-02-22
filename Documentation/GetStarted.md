@@ -80,8 +80,8 @@ or If you using Localizable.strings example:
  self.title = KOLocalizedString("Key")
  ```
  
-  ### More info
-  - **Custom configuration -** [Custom configuration](/Documentation/CustomConfiguration.md)
-  - **Network  configuration -** [Downloading Data to a File](/Documentation/NetworkCustomConfiguration.md)
-  - **Localized string -** [Localized string](/Documentation/LocalizedString.md)
-  - **Update language from server -** [Update language from server](/Documentation/UpdateLanguageFromServer.md)
+  ### More info 
+  - **Custom configuration -** [Core custom configuration](/Documentation/CustomConfiguration.md),  [Network Custom configuration](/Documentation/NetworkCustomConfiguration.md)
+  - [Updating files from server](/Documentation/UpdatingFromServer.md)
+  - [Localized string](/Documentation/LocalizedString.md)
+  - [Update language from server](/Documentation/UpdateLanguageFromServer.md)
