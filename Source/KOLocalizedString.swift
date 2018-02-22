@@ -24,13 +24,43 @@ public func KOLocalizedString(_ key: String) -> String{
 ///
 /// - Returns: return current locale
 public func KOCurrentLanguageKey()->String{
-    return  KOLocalizedCore.main.currentLanguageKey()
+    return ""//KOLocalizedCore.main.currentLanguageKey()
 }
 /// Set Language
 ///
 /// - Parameter key: key language
 public func KOSetLanguage(_ key:String){
     KOLocalizedCore.main.setLanguage(key)
+}
+
+/// Get localized image with name
+///
+/// - Parameter named: String
+/// - Returns: UIImage. if not found file return empty UIImage()
+public func KOLocalizedImage(named:String)->UIImage{
+    guard let bundle = KOLocalizedCore.main.currentBundle else { return UIImage() }
+    return UIImage(named: named, in: bundle, compatibleWith: nil) ?? UIImage()
+}
+/// Get localized image with name and type file
+///
+/// - Parameters:
+///   - forResource: String
+///   - ofType: String
+/// - Returns:  UIImage. if not found file return empty UIImage()
+public func KOLocalizedImage(forResource:String,  ofType:String)->UIImage{
+    guard let bundle = KOLocalizedCore.main.currentBundle else { return UIImage() }
+    guard let path = bundle.path(forResource: forResource, ofType: ofType) else { return UIImage() }
+    return UIImage(contentsOfFile: path) ?? UIImage()
+} 
+///  Get path file
+///
+/// - Parameters:
+///   - forResource: String
+///   - ofType: String
+/// - Returns: String
+public func KOLocalizedFilePath(forResource:String,  ofType:String)->String?{
+    guard let bundle = KOLocalizedCore.main.currentBundle else { return nil }
+    return bundle.path(forResource: forResource, ofType: ofType, inDirectory: nil)
 }
 /// Get language keys array
 ///
