@@ -49,26 +49,26 @@ this  code
  Add to your project  '.plist'  file with name  'Localizable' example:
  
  <div align="left">
- <img src="Documentation/Assets/Localizable_plist.png" width="264" height="61">
+ <img src="/Assets/Localizable_plist.png" width="264" height="61">
  </div>
  
  or  'Localizable.strings' example:
  
  <div align="left">
- <img src="Documentation/Assets/Localizable_plist.png" width="264" height="61">
+ <img src="/Assets/Localizable_plist.png" width="264" height="61">
  </div>
  
 ### Add key and values to file
 If you using Localizable.plist example:
 
 <div align="left">
-<img src="Documentation/Assets/key_value_plist.png">
+<img src="/Assets/key_value_plist.png">
 </div>
 
 or If you using Localizable.strings example:
 
 <div align="left">
-<img src="Documentation/Assets/key_value_strings.png">
+<img src="/Assets/key_value_strings.png">
 </div>
 
  ### Get Localization string
@@ -80,7 +80,7 @@ or If you using Localizable.strings example:
  ```
  
   ### More info
-  - **Custom configuration -** [Custom configuration](Documentation/CustomConfiguration.md),
-  - **Network  configuration -** [Downloading Data to a File](Documentation/NetworkCustomConfiguration.md)
-  - **Localized string -** [Localized string](Documentation/LocalizedString.md)
-  - **Update language from server -** [Update language from server](Documentation/UpdateLanguageFromServer.md)
+  - **Custom configuration -** [Custom configuration](/CustomConfiguration.md)
+  - **Network  configuration -** [Downloading Data to a File](/NetworkCustomConfiguration.md)
+  - **Localized string -** [Localized string](/LocalizedString.md)
+  - **Update language from server -** [Update language from server](/UpdateLanguageFromServer.md)
