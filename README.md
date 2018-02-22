@@ -3,7 +3,7 @@
 
 
 
-[![Build Status](https://travis-ci.org/SethSky/KOLocalizedString.svg?branch=master)](https://travis-ci.org/SethSky/KOLocalizedString)[![CocoaPods Compatible](https://img.shields.io/cocoapods/v/KOLocalizedString.svg)](https://img.shields.io/cocoapods/v/KOLocalizedString.svg)[![Platform](https://img.shields.io/cocoapods/p/KOLocalizedString.svg?style=flat)](https://img.shields.io/cocoapods/p/KOLocalizedString.svg?style=flat)
+[![Build Status](https://travis-ci.org/SethSky/KOLocalizedString.svg?branch=master)](https://travis-ci.org/SethSky/KOLocalizedString)  [![CocoaPods Compatible](https://img.shields.io/cocoapods/v/KOLocalizedString.svg)](https://img.shields.io/cocoapods/v/KOLocalizedString.svg)  [![Platform](https://img.shields.io/cocoapods/p/KOLocalizedString.svg?style=flat)](https://img.shields.io/cocoapods/p/KOLocalizedString.svg?style=flat)
 
 KOLocalizedString is an Localization library written in Swift.
 
