@@ -55,7 +55,7 @@ this  code
  or  'Localizable.strings' example:
  
  <div align="left">
- <img src="/Documentation/Assets/Localizable_plist.png" width="264" height="61">
+ <img src="/Documentation/Assets/Localizable_strings.png" width="271" height="64">
  </div>
  
 ### Add key and values to file
