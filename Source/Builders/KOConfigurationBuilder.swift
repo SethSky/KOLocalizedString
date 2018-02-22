@@ -15,7 +15,7 @@ public class KOConfigurationBuilder: KOConfigurationBuilderProtocol {
     private var _fileName            : String   = "Localizable"
     private var _url                 : String?
     private var _isUpdateOutside     : Bool     = false
-    private var _isEnabelDebug       : Bool     = false
+    private var _isEnableDebug       : Bool     = false
     public init() {}
     internal init(configuration: KOConfigurationProtocol) {
       _bundle               = configuration.bundle
@@ -25,7 +25,7 @@ public class KOConfigurationBuilder: KOConfigurationBuilderProtocol {
       _fileName             = configuration.fileName
       _url                  = configuration.url?.absoluteString
       _isUpdateOutside      = configuration.isUpdateOutside
-      _isEnabelDebug        = configuration.isEnabelDebug
+      _isEnableDebug        = configuration.isEnableDebug
     }
     /// Set bundle | only if need set this property
     ///
@@ -69,17 +69,17 @@ public class KOConfigurationBuilder: KOConfigurationBuilderProtocol {
     public func isUpdateOutside(update:Bool){
         _isUpdateOutside = update
     }
-    /// Set isEnabelDebug default false (not show debug in console)
+    /// Set isEnableDebug default false (not show debug in console)
     ///
     /// - Parameter debug: Bool
-    public func isEnabelDebug(debug:Bool){
-        _isEnabelDebug = debug
+    public func isEnableDebug(debug:Bool){
+        _isEnableDebug = debug
     }
     /// Create KOConfiguration object
     ///
     /// - Returns: KOConfigurationProtocol
     public func create() -> KOConfigurationProtocol {
         let url = URL(string:_url ?? "")
-        return KOConfiguration(bundle: _bundle, typeFile: _typeFile, dictionary: _dictionary, defaultLanguageKey: _defaultLanguageKey, fileName: _fileName, url: url, isUpdateOutside: _isUpdateOutside, isEnabelDebug: _isEnabelDebug)
+        return KOConfiguration(bundle: _bundle, typeFile: _typeFile, dictionary: _dictionary, defaultLanguageKey: _defaultLanguageKey, fileName: _fileName, url: url, isUpdateOutside: _isUpdateOutside, isEnableDebug: _isEnableDebug)
     }
 }

@@ -12,6 +12,6 @@ protocol KOFileManagerConfigurationBuilderProtocol {
     func setDirectoryName(string:String)
     func setSearchPathDirectory(directory:FileManager.SearchPathDirectory)
     func setSearchPathDomainMask(domainMask:FileManager.SearchPathDomainMask)
-    func setIsEnabelDebug(enable:Bool)
+    func setIsEnableDebug(enable:Bool)
     func create()->KOFileManagerConfigurationProtocol?
 }

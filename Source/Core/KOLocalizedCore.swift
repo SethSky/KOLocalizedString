@@ -78,7 +78,7 @@ public class KOLocalizedCore{
         guard let url = _configuration?.url else { debugPrint("⚠️ |KOLocalizedCore|==| Need add URL)"); return }
         guard configuration != nil else { _networkConfigure() ; return }
         _debug("💡 LocalizedCore: Create custom network configuration")
-        _networkMediator = KONetworkMediator(configuration!, url:url, isEnabelDebug: (_configuration?.isEnabelDebug)!)
+        _networkMediator = KONetworkMediator(configuration!, url:url, isEnableDebug: (_configuration?.isEnableDebug)!)
         _networkMediator?.setLanguageKey(key: currentLanguageKey())
         _networkMediator?.callback = { [unowned self] state in
             self._onStateChange(state)
@@ -91,7 +91,7 @@ public class KOLocalizedCore{
         guard let url = _configuration?.url, _networkMediator == nil else { return }
         _debug("💡 LocalizedCore: Create default network configuration")
         let networkConfiguration = KONetworkConfigurationBuilder().create()
-        _networkMediator = KONetworkMediator(networkConfiguration, url:url, isEnabelDebug: (_configuration?.isEnabelDebug)!)
+        _networkMediator = KONetworkMediator(networkConfiguration, url:url, isEnableDebug: (_configuration?.isEnableDebug)!)
         _networkMediator?.setLanguageKey(key: currentLanguageKey())
         _networkMediator?.callback = { [unowned self] state in
             self._onStateChange(state)
@@ -168,7 +168,7 @@ public class KOLocalizedCore{
         localizedStringChain.nextChain  = dictionaryChain
         dictionaryChain.nextChain       = nestedDictionaryChain
         nestedDictionaryChain.nextChain = keyChain
-        guard  _configuration?.isEnabelDebug ?? false  else {
+        guard  _configuration?.isEnableDebug ?? false  else {
             return localizedStringChain.getLocalizationString(key)
         }
         let value =  localizedStringChain.getLocalizationString(key)
@@ -201,7 +201,7 @@ public class KOLocalizedCore{
     ///
     /// - Parameter items: Any
     private func _debug(_ items:Any...){
-        guard let isEnabelDebug = _configuration?.isEnabelDebug, isEnabelDebug else { return }
+        guard let isEnableDebug = _configuration?.isEnableDebug, isEnableDebug else { return }
          debugPrint(items)
     }
 }

@@ -23,5 +23,5 @@ public protocol KOConfigurationProtocol {
     /// Is update outside. default false
     var isUpdateOutside     : Bool                      {get}
     /// Is debug. default false
-    var isEnabelDebug       : Bool                      {get}
+    var isEnableDebug       : Bool                      {get}
 }

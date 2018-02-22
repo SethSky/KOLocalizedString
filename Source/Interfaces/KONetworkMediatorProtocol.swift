@@ -6,19 +6,7 @@
 //
 
 import Foundation
-/// Localization network state
-///
-/// - loading: loading
-/// - loadedBundle: loadedBundle with Bundle
-/// - error: Error
-enum LocalizationNetworkState {
-    /// When loading a
-    case loading
-    /// Once we've succesfully loaded a Bundle
-    case loadedBundle(Bundle)
-    /// Error case with Error
-    case error(Error)
-}
+
 /// KONetworkMediator protocol
 protocol KONetworkMediatorProtocol {
     //typealias
@@ -29,8 +17,8 @@ protocol KONetworkMediatorProtocol {
     var completeUpdate          : ((String)->())?           { get set }
     var outSideBundle           : Bundle?                   { get } 
     //init
-    init(_ configuratio: KONetworkConfigurationProtocol, url:URL, isEnabelDebug:Bool)
+    init(_ configuratio: KONetworkConfigurationProtocol, url:URL, isEnableDebug:Bool)
     //functions
-    func setIsEnabelDebug(enable:Bool)
+    func setIsEnableDebug(enable:Bool)
     func setLanguageKey(key:String)
 }

@@ -15,21 +15,21 @@ class KOLocalizedNetwork:KOLocalizedNetworkProtocol {
     //––––––––––––––––––––––––––––––––––––––––
     //MARK: - Property -
     /// is enabel debug
-    private var _isEnabelDebug  : Bool
+    private var _isEnableDebug  : Bool
     // HTTP interface
     private let _httpInterface  : HTTPInterface
     private let _configuration  : KONetworkConfigurationProtocol
     //––––––––––––––––––––––––––––––––––––––––
     //MARK: - Init -
-    /// init with URLSession, KONetworkConfigurationProtocol end isEnabelDebug
+    /// init with URLSession, KONetworkConfigurationProtocol end isEnableDebug
     ///
     /// - Parameters:
     ///   - session: URLSession
-    ///   - isEnabelDebug: Bool
+    ///   - isEnableDebug: Bool
     ///   - configuration: KONetworkConfigurationProtocol
-    required init(isEnabelDebug:Bool, configuration:KONetworkConfigurationProtocol) {
+    required init(isEnableDebug:Bool, configuration:KONetworkConfigurationProtocol) {
         _httpInterface = HTTPURLSessionWrapper(session: configuration.session)
-        _isEnabelDebug = isEnabelDebug
+        _isEnableDebug = isEnableDebug
         _configuration = configuration
         _debugInit(configuration)
     }
@@ -154,7 +154,7 @@ class KOLocalizedNetwork:KOLocalizedNetworkProtocol {
     ///
     /// - Parameter items: Any
     private func _debug(_ items:Any...){
-        guard _isEnabelDebug else { return }
+        guard _isEnableDebug else { return }
         debugPrint(items)
     }
     /// isNetworkActivityIndicatorVisible

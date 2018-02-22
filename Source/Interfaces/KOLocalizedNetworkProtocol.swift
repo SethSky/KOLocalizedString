@@ -8,6 +8,6 @@
 import Foundation
 /// KOLocalizedNetwork protocol
 protocol KOLocalizedNetworkProtocol {
-    init(isEnabelDebug:Bool,configuration:KONetworkConfigurationProtocol)
+    init(isEnableDebug:Bool,configuration:KONetworkConfigurationProtocol)
     func responseValidate(_ response:URLResponse?, _ error:Error?, data:Data? ) -> HTTPResult
 }

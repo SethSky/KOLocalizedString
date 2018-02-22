@@ -184,15 +184,14 @@ final class KOFileManager:KOFileManagerProtocol{
         _debug("🔺 FileManager: \(configuration.manager.description)")
         _debug("🔺 Language directory name: \(configuration.directoryName)")
         _debug("🔺 Search Path Directory: \(configuration.searchPathDirectory.rawValue)")
-        _debug("🔺 Search path domain mask: \(configuration.searchPathDomainMask.rawValue)")
-        _debug("🔺 Is enable debug: \(configuration.isEnabelDebug)")
+        _debug("🔺 Search path domain mask: \(configuration.searchPathDomainMask.rawValue)") 
         _debug("----------------------------------------------------------")
     }
     /// Debug print
     ///
     /// - Parameter items: Any
     private func _debug(_ items:Any...){
-        guard _configuration.isEnabelDebug else { return }
+        guard _configuration.isEnableDebug else { return }
         debugPrint(items)
     }
 }

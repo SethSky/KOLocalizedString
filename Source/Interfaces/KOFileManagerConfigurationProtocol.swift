@@ -17,5 +17,5 @@ public protocol KOFileManagerConfigurationProtocol {
     //Search path domain mask
     var searchPathDomainMask    : FileManager.SearchPathDomainMask  {get}
     /// Is enable debug
-    var isEnabelDebug           : Bool                              {get}
+    var isEnableDebug           : Bool                              {get}
 }

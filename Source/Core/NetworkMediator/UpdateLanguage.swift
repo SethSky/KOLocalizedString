@@ -19,7 +19,7 @@ class UpdateLanguage:KOMediatorCommandProtocol{
     /// Out side bundle
     var bundle                  : Bundle?
     /// is enabel debug
-    private var _isEnabelDebug  : Bool = false
+    private var _isEnableDebug  : Bool = false
     /// resource url
     private var _url            : URL
     /// metwork api KOLocalizedNetwork
@@ -36,7 +36,7 @@ class UpdateLanguage:KOMediatorCommandProtocol{
     private var _queue          : DispatchQueue
     //––––––––––––––––––––––––––––––––––––––––
     //MARK: - Init -
-    init(api:KOLocalizedNetwork,fileManager: KOFileManagerProtocol, configuration: KONetworkConfigurationProtocol, url:URL, language:String, isEnabelDebug:Bool) {
+    init(api:KOLocalizedNetwork,fileManager: KOFileManagerProtocol, configuration: KONetworkConfigurationProtocol, url:URL, language:String, isEnableDebug:Bool) {
         //_semaphore      = DispatchSemaphore(value: 1)
         _queue          = DispatchQueue(label: "UpdateLanguage_" + language, qos: DispatchQoS.background, attributes: .concurrent)
         self.language   = language
@@ -44,7 +44,7 @@ class UpdateLanguage:KOMediatorCommandProtocol{
         _networkApi     = api
         _fileManager    = fileManager
         _configuration  = configuration
-        _isEnabelDebug  = isEnabelDebug
+        _isEnableDebug  = isEnableDebug
         _debugInit(language)
     }
     //––––––––––––––––––––––––––––––––––––––––
@@ -191,7 +191,7 @@ class UpdateLanguage:KOMediatorCommandProtocol{
     ///
     /// - Parameter items: Any
     private func _debug(_ items:Any...){
-        guard _isEnabelDebug else { return }
+        guard _isEnableDebug else { return }
         debugPrint(items)
     }
 }

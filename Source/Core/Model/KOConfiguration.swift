@@ -15,10 +15,10 @@ final class KOConfiguration:KOConfigurationProtocol{
     var fileName            : String
     var url                 : URL?
     var isUpdateOutside     : Bool
-    var isEnabelDebug       : Bool
+    var isEnableDebug       : Bool
     //––––––––––––––––––––––––––––––––––––––––
     //MARK: - Init -
-    init(bundle: Bundle?, typeFile: String, dictionary: Dictionary<String, Any>?, defaultLanguageKey: String?, fileName: String, url: URL?, isUpdateOutside: Bool, isEnabelDebug: Bool) {
+    init(bundle: Bundle?, typeFile: String, dictionary: Dictionary<String, Any>?, defaultLanguageKey: String?, fileName: String, url: URL?, isUpdateOutside: Bool, isEnableDebug: Bool) {
         self.bundle                 = bundle
         self.typeFile               = typeFile
         self.dictionary             = dictionary
@@ -26,6 +26,6 @@ final class KOConfiguration:KOConfigurationProtocol{
         self.fileName               = fileName
         self.url                    = url
         self.isUpdateOutside        = isUpdateOutside
-        self.isEnabelDebug          = isEnabelDebug
+        self.isEnableDebug          = isEnableDebug
     } 
 }

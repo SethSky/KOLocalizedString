@@ -14,7 +14,6 @@ class KOResponseCreateResultChain: KOResponseValidateChainProtocol {
         _configuration = configuration
     }
     func getResult(_ response: URLResponse?, _ error: Error?, _ data: Data?) -> HTTPResult {
-        
         do {
             let jsonResult = try  JSONSerialization.jsonObject(with: data!, options: JSONSerialization.ReadingOptions.mutableContainers)
             if let array = jsonResult as? [[String : Any]]{

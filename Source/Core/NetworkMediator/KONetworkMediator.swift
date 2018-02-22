@@ -20,7 +20,7 @@ class KONetworkMediator: KONetworkMediatorProtocol {
     //––––––––––––––––––––––––––––––––––––––––
     //MARK: - Property private  -
     /// is enabel debug
-    private var _isEnabelDebug  : Bool = false
+    private var _isEnableDebug  : Bool = false
     /// resource url
     private var _url            : URL
     /// metwork api KOLocalizedNetwork
@@ -62,14 +62,14 @@ class KONetworkMediator: KONetworkMediatorProtocol {
     /// - Parameters:
     ///   - configuratio: KONetworkConfigurationProtocol
     ///   - url: URL
-    ///   - isEnabelDebug: Bool
-    required init(_ configuration: KONetworkConfigurationProtocol, url: URL, isEnabelDebug:Bool ) {
+    ///   - isEnableDebug: Bool
+    required init(_ configuration: KONetworkConfigurationProtocol, url: URL, isEnableDebug:Bool ) {
         _url = url
-        _isEnabelDebug  = isEnabelDebug
+        _isEnableDebug  = isEnableDebug
         _configuration  = configuration
-        _networkApi     = KOLocalizedNetwork(isEnabelDebug: isEnabelDebug, configuration: configuration)
+        _networkApi     = KOLocalizedNetwork(isEnableDebug: isEnableDebug, configuration: configuration)
         let builder     = KOFileManagerConfigurationBuilder(configuration: configuration.fileManagerConfiguration!)
-        builder.setIsEnabelDebug(enable: isEnabelDebug)
+        builder.setIsEnableDebug(enable: isEnableDebug)
         _fileManager    = KOFileManager(configuration: builder.create()!)
         _fileManager.callback = { [weak self] state in self?._onStateChange(state) }
         _debugInit(url)
@@ -92,8 +92,8 @@ class KONetworkMediator: KONetworkMediatorProtocol {
     /// Set is enabel debug
     ///
     /// - Parameter enable: Bool
-    public func setIsEnabelDebug(enable:Bool){
-        self._isEnabelDebug = enable
+    public func setIsEnableDebug(enable:Bool){
+        self._isEnableDebug = enable
     }
     //––––––––––––––––––––––––––––––––––––––––
     //MARK: - Private functions -
@@ -139,7 +139,7 @@ class KONetworkMediator: KONetworkMediatorProtocol {
             guard command.isComplete else{ return }
             command.execute()
         }else{
-            let command = UpdateLanguage(api: _networkApi, fileManager: _fileManager, configuration: _configuration, url: _url, language: languageKey, isEnabelDebug: _isEnabelDebug)
+            let command = UpdateLanguage(api: _networkApi, fileManager: _fileManager, configuration: _configuration, url: _url, language: languageKey, isEnableDebug: _isEnableDebug)
             command.setLastUpdate(self._lastUpdate[languageKey] ?? [])
             command.callback = { [weak self] state in
                 self?._commandOnStateChange(state)
@@ -206,7 +206,7 @@ class KONetworkMediator: KONetworkMediatorProtocol {
     ///
     /// - Parameter items: Any
     private func _debug(_ items:Any...){
-        guard _isEnabelDebug else { return }
+        guard _isEnableDebug else { return }
         debugPrint(items)
     }
 }

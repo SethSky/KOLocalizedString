@@ -24,7 +24,7 @@ public func KOLocalizedString(_ key: String) -> String{
 ///
 /// - Returns: return current locale
 public func KOCurrentLanguageKey()->String{
-    return ""//KOLocalizedCore.main.currentLanguageKey()
+    return KOLocalizedCore.main.currentLanguageKey()
 }
 /// Set Language
 ///

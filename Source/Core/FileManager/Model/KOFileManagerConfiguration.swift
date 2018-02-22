@@ -12,12 +12,12 @@ class KOFileManagerConfiguration: KOFileManagerConfigurationProtocol {
     var directoryName           : String
     var searchPathDirectory     : FileManager.SearchPathDirectory
     var searchPathDomainMask    : FileManager.SearchPathDomainMask
-    var isEnabelDebug           : Bool
-    init(manager: FileManager, directoryName: String, searchPathDirectory: FileManager.SearchPathDirectory, searchPathDomainMask: FileManager.SearchPathDomainMask, isEnabelDebug: Bool) {
+    var isEnableDebug           : Bool
+    init(manager: FileManager, directoryName: String, searchPathDirectory: FileManager.SearchPathDirectory, searchPathDomainMask: FileManager.SearchPathDomainMask, isEnableDebug: Bool) {
         self.manager                = manager
         self.directoryName          = directoryName
         self.searchPathDirectory    = searchPathDirectory
         self.searchPathDomainMask   = searchPathDomainMask
-        self.isEnabelDebug          = isEnabelDebug
+        self.isEnableDebug          = isEnableDebug
     }
 }

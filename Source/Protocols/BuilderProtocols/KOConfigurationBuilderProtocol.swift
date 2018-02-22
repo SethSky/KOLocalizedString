@@ -15,5 +15,5 @@ public protocol KOConfigurationBuilderProtocol {
     func setFileName(string: String)
     func setUrl(string: String)
     func isUpdateOutside(update:Bool)
-    func isEnabelDebug(debug:Bool)
+    func isEnableDebug(debug:Bool)
 }

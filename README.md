@@ -40,7 +40,7 @@ KOLocalizedString is an Localization library written in Swift.
 $ gem install cocoapods
 ```
 
-> CocoaPods 1.1+ is required to build KOLocalizedString 0.0.1+.
+> CocoaPods 1.1+ is required to build KOLocalizedString 1.0.0+.
 
 To integrate KOLocalizedString into your Xcode project using CocoaPods, specify it in your `Podfile`:
 
@@ -50,7 +50,7 @@ platform :ios, '10.0'
 use_frameworks!
 
 target '<Your Target Name>' do
-    pod 'KOLocalizedString', '~> 0.0.4'
+    pod 'KOLocalizedString', '~> 1.0.0'
 end
 ```
 
