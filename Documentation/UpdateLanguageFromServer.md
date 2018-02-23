@@ -10,7 +10,7 @@ After launch application KOLocalizedCore creating mediator and send request to s
 
 If exist correct files list in response, mediator create command to downloading this files and it saved to temporary directory .
 
-After downloading full files list  'languageKey.jroj' moved  to 'Language' directory.
+After downloading full files list   ```languageKey.jroj ``` moved  to  ```Language ``` directory.
 
 When new files to be moveded complete, mediator set self new 'bundle' and callback to core with new 'bundle'.
 
@@ -88,14 +88,14 @@ function errorMessage($key_error){
     }
 }
  ```
-Add example code to 'index.php' and upload on server to API directory.
-Next in root directory create directory with name 'localizable'
-Next inside 'localizable' create directory with name your bundle id, example 'com.domine.Example'
-Next inside 'com.domine.Example' create directory with name your version, example '1.0'
-Next inside your version directory create directory with language key name, example 'en'
-Last step upload your 'Localizable.plist' file to  need language directory.
+Add example code to  ```index.php```  and upload on server to API directory.
+Next in root directory create directory with name  ```localizable ```.
+Next inside  ```localizable ``` create directory with name your bundle id, example ```com.domine.Example ```.
+Next inside  ```com.domine.Example ``` create directory with name your version, example  ```1.0 ```.
+Next inside your version directory create directory with language key name, example  ```en ```.
+Last step upload your  ```Localizable.plist ``` file to  need language directory.
 
-Whereupon your will be available api with URL 'http://www.yourdomain.com/api'
+Whereupon your will be available api with URL  ```http://www.yourdomain.com/api ```.
 
 ### More info
 - [Get started](/Documentation/GetStarted.md)
