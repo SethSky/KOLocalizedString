@@ -3,7 +3,7 @@
 ### Create configuration
 
 To create  file manager custom configuration use KOFileManagerConfigurationProtocol with  KOFileManagerConfigurationBuilder
-and add created configuration to core.
+and add created configuration to network configuration.
 
 Example:
 

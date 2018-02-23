@@ -65,7 +65,7 @@ All keys can be configured in the [Network  configuration](/Documentation/Networ
 ##### If exist correct files list in response:
 
 Mediator create command to downloading this files and it saved to temporary directory .
-After downloading full files list   ```languageKey.jroj ``` moved  to  ```Language ``` directory.
+After downloading full files list   ```languageKey.lproj ``` moved  to  ```Language ``` directory.
 When new files to be moveded complete, mediator set self new 'bundle' and callback to core with new 'bundle'.
 You can track the change with notification ```KODidUpdateBundle``` or callback ```KOLocalizedCore.main.completeUpdate```
 You can also track errors  ```KOLocalizedCore.main.errorCallback ```.

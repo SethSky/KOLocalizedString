@@ -56,7 +56,11 @@ func isUpdateOutside(update:Bool)
 ```
 Set is enable debug. Default ```false``` (not show debug in console)
 ```swift
-public func isEnableDebug(debug:Bool)
+func isEnableDebug(debug:Bool)
+```
+Create KOConfiguration
+```swift
+func create() -> KOConfigurationProtocol
 ```
   ### More info 
   - [Get started](/Documentation/GetStarted.md)
