@@ -1,70 +1,51 @@
-## Network configuration
+## File manager configuration
 
 ### Create configuration
 
-To create  network custom configuration use KONetworkConfigurationProtocol with  KONetworkConfigurationBuilder
+To create  file manager custom configuration use KOFileManagerConfigurationProtocol with  KOFileManagerConfigurationBuilder
 and add created configuration to core.
 
 Example:
 
 Create configuration builder
 ```swift
-let networkConfigurationBuilder = KONetworkConfigurationBuilder()
-```
-set 'http://yourdomain.com/api' value to URL
-```swift
-configurationBuilder.setUrl(string: "http://yourdomain.com/api")
+let fileManagerConfigurationBuilder = KOFileManagerConfigurationBuilder()
 ```
 Created configuration
 ```swift
-let networkConfiguration = networkConfigurationBuilder.create()
+let fileManagerConfiguration = fileManagerConfigurationBuilder.create()!
 ```
-Add created configuration to core
+Set configuration to [KONetworkConfigurationBuilder ](/Documentation/NetworkCustomConfiguration.md)
 ```swift
-KOLocalizedCore.main.networkConfigure(networkConfiguration)
+networkConfigurationBuilder.setFileManagerConfiguration(configuration:fileManagerConfiguration)
 ```
-### Network Configuration builder
-#### Available set: KONetworkConfigurationBuilder
+### File manager Configuration builder
+#### Available set: KOFileManagerConfigurationBuilder
 
-Set session. If not set default  ```URLSession(configuration: URLSessionConfiguration.default)```
+Set file manager. If not set default  ```FileManager.default```
 ```swift
- func setSession(session: URLSession)
+ func setManager(manager: FileManager)
 ```
-Set fileNameKey. If not set default  ```filename```
+Set languages directory name. If not set default  ```Languages```
 ```swift
-func setFileNameKey(string: String)
+func setDirectoryName(string: String)
 ```
-Set urlKey. If not set default  ```url```
+Set search path directory. If not set default  ```.applicationSupportDirectory```
 ```swift
-func setUrlKey(string: String)
+func setSearchPathDirectory(directory: FileManager.SearchPathDirectory)
 ```
-Set latestUpdateKey. If not set default  ```latest_update```
+Set search path domain mask. If not set default  ```.userDomainMask```
 ```swift
-func setLatestUpdateKey(string: String)
+func setSearchPathDomainMask(domainMask: FileManager.SearchPathDomainMask)
 ```
-Set rootPointKey optional. If not set default  ```array```
+Set is enable debug. If not set default  ```false```
 ```swift
-func setRootPointKey(string: String?)
+func setIsEnableDebug(enable: Bool)
 ```
-Set request language key optional. If not set default  ```key```
+
+Create KOFileManagerConfiguration
 ```swift
-func setRequestLangKey(string: String?)
-```
-Set request Bundle key optional. If not set default  ```bundle```
-```swift
-func setRequestBundlekey(string: String?)
-```
-Set request version build key optional. If not set default  ```ver```
-```swift
-func setRequestVersionkey(string: String?)
-```
-Set file manager configuration optional. If not set create default [File manager configuration](/Documentation/FileManagerConfiguration.md)
-```swift
-func setFileManagerConfiguration(configuration:KOFileManagerConfigurationProtocol)
-```
-Create KONetworkConfiguration
-```swift
-func create() -> KONetworkConfigurationProtocol
+func create() -> KOFileManagerConfigurationProtocol?
 ```
 
 ### More info 

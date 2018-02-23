@@ -3,17 +3,11 @@
 ### How use update language from server
 
 First step its add url to configuration and set isUpdateOutside.  [more detail](/Documentation/CustomConfiguration.md)
-
 Second step, add language file to server.
-
 After launch application KOLocalizedCore creating mediator and send request to said url.
-
 If exist correct files list in response, mediator create command to downloading this files and it saved to temporary directory .
-
 After downloading full files list   ```languageKey.jroj ``` moved  to  ```Language ``` directory.
-
 When new files to be moveded complete, mediator set self new 'bundle' and callback to core with new 'bundle'.
-
 Whereupon if you using plist, language dictionary will be update. [more detail](/Documentation/UpdatingFromServer.md)
 
 ### You can use a simple web site with a file hosting service
@@ -99,6 +93,6 @@ Whereupon your will be available api with URL  ```http://www.yourdomain.com/api 
 
 ### More info
 - [Get started](/Documentation/GetStarted.md)
-- **Custom configuration -** [Core custom configuration](/Documentation/CustomConfiguration.md),  [Network Custom configuration](/Documentation/NetworkCustomConfiguration.md)
+- **Custom configuration -** [Core custom configuration](/Documentation/CustomConfiguration.md),  [Network Custom configuration](/Documentation/NetworkCustomConfiguration.md),  [File manager configuration](/Documentation/FileManagerConfiguration.md)
 - [Updating files from server](/Documentation/UpdatingFromServer.md)
 - [Localized string](/Documentation/LocalizedString.md)

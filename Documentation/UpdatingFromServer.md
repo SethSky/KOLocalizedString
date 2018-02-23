@@ -16,52 +16,59 @@
   KOLocalizedCore.main.networkConfigure(nil)
  ```
  Detail about custom network configuration - [Network  configuration](/Documentation/NetworkCustomConfiguration.md)
-  
-  
+ 
  ### How use update files from server
+ After added  network configuration you can use update file from server.
  
- If you will need update Localized files from server: add code to AppDelegate where you specify the URL API. this url  will be open to KOLocalizedNetwork.
+ After launch application KOLocalizedCore creating mediator and send ```.GET``` request to said url in network configuration.
+ ##### Example Request
+ ```http://khimich.com.ua/api/?key=en&ver=1.0&bundle=com.domine.Example```
+##### Request parameters:
+
+```key``` = ```en``` - language key
+
+ ```ver ```= ```1.0``` - varsion key
  
- ```swift
- import KOLocalizedString
+ ```bundle``` = ```com.domine.Example``` - bundle id key
  
- @UIApplicationMain
- class AppDelegate: UIResponder, UIApplicationDelegate {
- func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
- KOLocalizedCore.main.url = "http://example.com/api"
- return true
- }
- }
- ```
- After added URL to Core, manager network (KOLocalizedNetwork) create .GET request to URL with language key, bundle id and version. After create full URL will send request.
- 
- #### Example Request
- http://khimich.com.ua/api/?key=en&ver=1.0&bundle=com.domine.Example
- Request parameters:
- key = en
- ver = 1.0
- bundle = com.domine.Example
- 
- Response must contain array objects for parsing JSON.
- Object must contain key "filename" - name file, "url" - url to file, "latest_update" - the value of which will be checked, updated file or not.
- 
- #### Example Response
+  All keys can be configured in the [Network  configuration](/Documentation/NetworkCustomConfiguration.md)
+  
+ ##### Example Response
  ```JSON
  {
- "array":[
- {
- "filename":"Localizable.plist",
- "url":"http://example.com/localizable/com.khymych.KOLocalized/1.0/en/Localizable.plist",
- "latest_update":"2017-Nov-24'EET'16:11:45"
- },
- {
- "filename":"Localizable.strings",
- "url":"http://example.com/localizable/com.khymych.KOLocalized/1.0/en/Localizable.strings",
- "latest_update":"2017-Nov-23'EET'16:11:45"
- }
- ]
+    "array":[
+                {
+                    "filename":"Localizable.plist",
+                    "url":"http://example.com/localizable/com.khymych.KOLocalized/1.0/en/Localizable.plist",
+                    "latest_update":"2017-Nov-24'EET'16:11:45"
+                },
+                {
+                    "filename":"Localizable.strings",
+                    "url":"http://example.com/localizable/com.khymych.KOLocalized/1.0/en/Localizable.strings",
+                    "latest_update":"2017-Nov-23'EET'16:11:45"
+                }
+            ]
  }
  ```
+Response must contain array objects for parsing JSON with root point  ```array``` or said on network configuration.
+ 
+##### Object must contain keys:
+
+ ```filename``` - name file,
+ 
+  ```url``` - url to file,
+  
+  ```latest_update ``` - the value of which will be checked, updated file or not. (method is equal)
+  
+All keys can be configured in the [Network  configuration](/Documentation/NetworkCustomConfiguration.md)
+
+##### If exist correct files list in response:
+
+Mediator create command to downloading this files and it saved to temporary directory .
+After downloading full files list   ```languageKey.jroj ``` moved  to  ```Language ``` directory.
+When new files to be moveded complete, mediator set self new 'bundle' and callback to core with new 'bundle'.
+You can track the change with notification ```KODidUpdateBundle``` or callback ```KOLocalizedCore.main.completeUpdate```
+You can also track errors  ```KOLocalizedCore.main.errorCallback ```.
 
   ### More info
   - [Get started](/Documentation/GetStarted.md)
