@@ -38,33 +38,33 @@ Set dictionary ```Dictionary<String,Any>```, but if you set this property dictio
 ```swift
 func setDictionary(dictionary: Dictionary<String,Any>?)
 ```
-
 Set default language key, example "en".  Set up in case if the application is needed to launch with default language
 ```swift
 public func setDefaultLanguageKey(string: String)
 ```
-
 Set file name. Default  ```Localizable```
  ```swift
 func setFileName(string: String)
 ```
-
 Set URL for destination resource for get response about language files information
 ```swift
 func setUrl(string: String)
 ```
-
 Set is update outside. Default  ```false```(not update)
 ```swift
 func isUpdateOutside(update:Bool)
 ```
 Set is enable debug. Default ```false``` (not show debug in console)
 ```swift
-public func isEnableDebug(debug:Bool)
+func isEnableDebug(debug:Bool)
+```
+Create KOConfiguration
+```swift
+func create() -> KOConfigurationProtocol
 ```
   ### More info 
   - [Get started](/Documentation/GetStarted.md)
-  - **Custom configuration -** [Network Custom configuration](/Documentation/NetworkCustomConfiguration.md)
+  - **Custom configuration -** [Network Custom configuration](/Documentation/NetworkCustomConfiguration.md),  [File manager configuration](/Documentation/FileManagerConfiguration.md)
   - [Updating files from server](/Documentation/UpdatingFromServer.md)
   - [Localized string](/Documentation/LocalizedString.md)
   - [Update language from server](/Documentation/UpdateLanguageFromServer.md)

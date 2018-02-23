@@ -10,9 +10,8 @@ KOLocalizedString is an Localization library written in Swift.
 - [Features](#features)
 - [Requirements](#requirements)
 - [Installation](#installation)
-- [Usage](Documentation/Usage.md)
 - [Get started](Documentation/GetStarted.md)
-- **Custom configuration -** [Core custom configuration](Documentation/CustomConfiguration.md),  [Network Custom configuration](Documentation/NetworkCustomConfiguration.md)
+- **Custom configuration -** [Core custom configuration](Documentation/CustomConfiguration.md),  [Network Custom configuration](Documentation/NetworkCustomConfiguration.md),  [File manager configuration](Documentation/FileManagerConfiguration.md)
 - [Updating files from server](Documentation/UpdatingFromServer.md)
 - [Localized string](Documentation/LocalizedString.md)
 - [Update language from server](Documentation/UpdateLanguageFromServer.md)
@@ -20,7 +19,7 @@ KOLocalizedString is an Localization library written in Swift.
 
 ## Features
 
-- [x] Usage .plist / .strings files
+- [x] Usage .plist / .strings /images files
 - [x] Update files from server
 - [x] Update localization without rebooting application
 
