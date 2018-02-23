@@ -11,10 +11,6 @@ Create configuration builder
 ```swift
 let networkConfigurationBuilder = KONetworkConfigurationBuilder()
 ```
-set 'http://yourdomain.com/api' value to URL
-```swift
-configurationBuilder.setUrl(string: "http://yourdomain.com/api")
-```
 Created configuration
 ```swift
 let networkConfiguration = networkConfigurationBuilder.create()

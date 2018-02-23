@@ -7,9 +7,13 @@ First step its add url to configuration and set isUpdateOutside.  [more detail](
 Second step, add language file to server.
 
 After launch application KOLocalizedCore creating mediator and send request to said url.
+
 If exist correct files list in response, mediator create command to downloading this files and it saved to temporary directory .
+
 After downloading full files list  'languageKey.jroj' moved  to 'Language' directory.
+
 When new files to be moveded complete, mediator set self new 'bundle' and callback to core with new 'bundle'.
+
 Whereupon if you using plist, language dictionary will be update. [more detail](/Documentation/UpdatingFromServer.md)
 
 ### You can use a simple web site with a file hosting service
